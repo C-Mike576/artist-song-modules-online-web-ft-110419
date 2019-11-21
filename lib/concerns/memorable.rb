@@ -1,7 +1,7 @@
 module Memorable
   module ClassMethods
     def all
-      self.class
+      ObjectSpace.each_object(self).to_a
     end
     
     def reset_all
